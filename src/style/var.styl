@@ -1,0 +1,70 @@
+$header-height = 10vh
+$main-height = 100vh - $header-height
+
+$pd = 5vw
+
+
+
+// font size
+
+$h4 = 16px
+$h3 = 18px
+$h2 = 22px
+$h1 = 28px
+
+
+
+
+
+// colors
+
+
+
+$purple = rgba(61, 69, 238, 1)
+$hover-time = .3s
+
+
+.tryfree-btn
+  white-space: nowrap;
+  font-family: 'TT Norms Medium';                
+  font-style: normal;
+  font-weight: 500;
+  font-size: $h3;
+  letter-spacing: -0.452942px;
+  color: #FFFFFF;
+  background: $purple;
+  border-radius: 6px;
+  padding 10px 25px
+  opacity 1
+  transition: opacity .3s
+  &:hover
+    cursor pointer
+    opacity 0.7
+    transition: opacity .3s
+
+.info-block
+    width 420px
+    margin-left 200px
+    margin-top -($header-height)
+    display flex
+    flex-direction column
+    justify-content center
+    align-items flex-start
+    &__name
+      font-family: 'TT Norms Bold';                      
+      font-style: normal;
+      font-weight: bold;
+      font-size: $h1;
+      line-height: 47px;
+      letter-spacing: -0.82353px;
+      color: #000000;
+    &__description
+      margin-top 15px
+      margin-bottom 20px
+      font-family: 'TT Norms Regular';                      
+      font-style: normal;
+      font-weight: normal;
+      font-size: $h4;
+      line-height: 26px;
+      letter-spacing: -0.452942px;
+      color: #000000;

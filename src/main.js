@@ -2,6 +2,14 @@ import Vue from 'vue'
 import App from './App.vue'
 import store from './store'
 
+
+// Global style css
+import './style/font.css'
+
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+import 'swiper/dist/css/swiper.css'
+Vue.use(VueAwesomeSwiper)
+
 Vue.config.productionTip = false
 
 new Vue({
