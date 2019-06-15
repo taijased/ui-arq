@@ -6,13 +6,16 @@
           .content
             .content__name Дополняйте реальность
             .content__description Оставайтесь в курсе последних новостей, никакого спама! Только свежайшие новости проекта из первых рук.
-         
+          Subscribe
 
-    //- img.image-block(src="../../assets/screen3.svg")  
 </template>
 
 <script>
+import Subscribe from '../form/Subscribe';
 export default {
+  components: {
+    Subscribe
+  }
 
 }
 </script>
