@@ -7,16 +7,15 @@
                 .nav-item ARQ Viewer
                 .nav-item Для кого?
                 .nav-item.active Оставайся на связи
-        .tryfree-btn Попробовать бесплатно
-
+        FreeBtn
 </template>
 
 <script>
 import { mapGetters} from 'vuex';
-
+import FreeBtn from './FreeBtn';
 export default {
-    computed: {
-        
+    components: {
+        FreeBtn
     }
 }
 </script>

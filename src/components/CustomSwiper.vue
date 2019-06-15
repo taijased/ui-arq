@@ -6,6 +6,10 @@
       About
     swiper-slide
       Viewer
+    swiper-slide
+      ForSomeone
+    swiper-slide
+      Contacts
     .swiper-pagination(slot="pagination")
 </template>
 <script>
@@ -13,6 +17,8 @@
 import About from "./slide/About";
 import Home from "./slide/Home";
 import Viewer from './slide/Viewer';
+import ForSomeone from './slide/ForSomeone';
+import Contacts from './slide/Contacts';
 
 export default {
   data() {
@@ -35,7 +41,9 @@ export default {
   components: {
     Home,
     About,
-    Viewer
+    Viewer,
+    ForSomeone,
+    Contacts
   }
 };
 </script>

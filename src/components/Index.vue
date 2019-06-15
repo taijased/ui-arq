@@ -1,5 +1,5 @@
 <template lang="pug">
-  .wrapper
+  .index
     Header
     CustomSwiper
 </template>
@@ -17,7 +17,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="stylus">
-.wrapper
+.index
   background rgba(61, 69, 238, 1);
   overflow hidden
 </style>
