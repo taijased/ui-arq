@@ -1,5 +1,5 @@
 <template lang="pug">
-  swiper(:options="swiperOption")
+  swiper(:options="swiperOption", ref="mySwiper")
     swiper-slide
       Home
     swiper-slide
@@ -13,6 +13,7 @@
     .swiper-pagination(slot="pagination")
 </template>
 <script>
+import { mapActions, mapGetters} from 'vuex';
 
 import About from "./slide/About";
 import Home from "./slide/Home";
@@ -27,16 +28,46 @@ export default {
         direction: "vertical",
         effect: "fade",
         mousewheel: true,
-        loop: true,
+        // loop: true,
         navigation: {
           nextEl: ".bottom-navigation",
         },
         pagination: {
           el: ".swiper-pagination",
           clickable: true
+        },
+        onSlideChangeEnd() {
+          this.onSwipe()
         }
       }
     };
+  },
+  mounted() {
+    this.swiper.on('slideChange',() => {
+      this.onSwipe(this)
+    });
+  },
+  computed: {
+    ...mapGetters({
+      getSlideIndex: "main/getSlideIndex",
+    }),
+    swiper() {
+      return this.$refs.mySwiper.swiper
+    }
+  },
+  methods: {
+    ...mapActions({
+      setSlideIndex: "main/setSlideIndex",
+      setSwiper: "main/setSwiper",
+    }),
+    onSwipe(varuable) {
+      this.setSlideIndex(varuable.swiper.activeIndex)
+    }
+  },
+  created() {
+    this.$nextTick(() => {
+      this.setSwiper(this.$refs.mySwiper.swiper)
+    })
   },
   components: {
     Home,

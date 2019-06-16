@@ -12,9 +12,11 @@
 
 <script>
 import Subscribe from '../form/Subscribe';
+import ModalOK from '../modal/ModalOK';
 export default {
   components: {
-    Subscribe
+    Subscribe,
+    ModalOK
   }
 
 }

@@ -8,6 +8,7 @@
 </template>
 <script>
 import ARQService from '../../api/ARQService';
+import { mapGetters, mapActions} from 'vuex';
 
 export default {
     data() {
@@ -37,24 +38,26 @@ export default {
     },
     methods: {
         submitForm() {
-            try {
-                new Promise((resolve, reject) => {
-                    ARQService.subscribe(this.ruleForm.email)
-                        .then(response => {
-                            console.log(response);
-                            resolve(response)
-                        })
-                        .catch(reject)
-                })
-            } catch (error) {
-                console.log(error + " | sendMail");
-            }
+            // try {
+            //     new Promise((resolve, reject) => {
+            //         ARQService.subscribe(this.ruleForm.email)
+            //             .then(response => {
+            //                 console.log(response);
+            //                 this.visible = true
+            //                 resolve(response)
+            //             })
+            //             .catch(reject)
+            //     })
+            // } catch (error) {
+            //     console.log(error + " | sendMail");
+            // }
         }
-    }
-
+    },
 };
 </script>
 <style lang="less">
+
+
 .subscribe {
     margin-top: 20px;
     display: flex;
@@ -215,7 +218,7 @@ export default {
 }
 .disabled-btn {
   user-select: none;
-  pointer-events: none;
+//   pointer-events: none;
   opacity: 0.7;
 }
 

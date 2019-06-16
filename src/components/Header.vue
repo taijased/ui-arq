@@ -3,17 +3,29 @@
         .navigation
             img.logo(src="../assets/head_logo.svg")
             nav
-                .nav-item.active ARQ Editor
-                .nav-item ARQ Viewer
-                .nav-item Для кого?
-                .nav-item.active Оставайся на связи
+                .nav-item(@click="clickNavItem(1)", :class="{'active': getSlideIndex === 1}") ARQ Editor
+                .nav-item(@click="clickNavItem(2)", :class="{'active': getSlideIndex === 2}") ARQ Viewer
+                .nav-item(@click="clickNavItem(3)", :class="{'active': getSlideIndex === 3}") Для кого?
+                .nav-item(@click="clickNavItem(4)", :class="{'active': getSlideIndex === 4}") Оставайся на связи
         FreeBtn
 </template>
 
 <script>
 import { mapGetters} from 'vuex';
 import FreeBtn from './FreeBtn';
+
 export default {
+    computed: {
+        ...mapGetters({
+            getSlideIndex: "main/getSlideIndex",
+            getSwiper: "main/getSwiper",
+        }),
+    },
+    methods: {
+        clickNavItem(index) {
+            this.getSwiper.slideTo(index, 500, true);
+        }
+    },
     components: {
         FreeBtn
     }
