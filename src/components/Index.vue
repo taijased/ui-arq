@@ -4,11 +4,15 @@
     Regin(v-if="getRegin")
     CustomSwiper(v-if="!getRegin")
     Footer(v-if="!getRegin")
+    ModalOK
+    ModalSignUp
 </template>
+
 
 <script>
 import { mapGetters} from 'vuex';
-
+import ModalOK from './modal/ModalOK';
+import ModalSignUp from './modal/ModalSignUp';
 import CustomSwiper from './CustomSwiper';
 import Header from './Header';
 import Footer from './Footer';
@@ -25,7 +29,9 @@ export default {
     CustomSwiper,
     Header,
     Footer,
-    Regin
+    Regin,
+    ModalOK,
+    ModalSignUp
   }
 }
 </script>

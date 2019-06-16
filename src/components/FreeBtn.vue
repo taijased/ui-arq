@@ -1,5 +1,5 @@
 <template lang="pug">
-    .primary-btn(@click="updateRegin") Попробовать бесплатно
+    .primary-btn(@click="clickBtn") Попробовать бесплатно
 </template>
 
 <script>
@@ -9,9 +9,12 @@ export default {
   methods: {
     ...mapActions({
       updateRegin: "main/updateRegin",
+      setSlideIndex: "main/setSlideIndex",
+
     }),
-    tryFree() {
-      console.log("free");
+    clickBtn() {
+      this.updateRegin()
+      this.setSlideIndex(0)
     }
   }
 }

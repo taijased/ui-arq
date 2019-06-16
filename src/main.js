@@ -11,6 +11,7 @@ Vue.use(ElementUI);
 
 // Global style css
 import './style/font.css'
+import './style/index.css'
 
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import 'swiper/dist/css/swiper.css'

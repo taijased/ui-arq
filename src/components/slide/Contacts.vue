@@ -7,18 +7,14 @@
             .content__name Дополняйте реальность
             .content__description Оставайтесь в курсе последних новостей, никакого спама! Только свежайшие новости проекта из первых рук.
           Subscribe
-
 </template>
 
 <script>
 import Subscribe from '../form/Subscribe';
-import ModalOK from '../modal/ModalOK';
 export default {
   components: {
     Subscribe,
-    ModalOK
   }
-
 }
 </script>
 

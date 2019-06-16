@@ -2,7 +2,7 @@
     .subscribe
         el-form(label-position='left', :model='ruleForm', :rules="rules", status-icon, ref="ruleForm", class="creator-form")
             el-form-item(prop="email", :class="{'not-empty': ruleForm.email !== ''}")
-                el-input(v-model='ruleForm.email', autocomplete="off")
+                el-input#subscribe-input(v-model='ruleForm.email', autocomplete="off", maxlength="30")
                 .label Email
         .primary-btn(@click="submitForm()", :class="{'disabled-btn': !disabledBtn}") Оставить почту
 </template>
@@ -37,20 +37,22 @@ export default {
         };
     },
     methods: {
+      ...mapActions({
+        updateModalSubscribe: "main/updateModalSubscribe",
+      }),
         submitForm() {
-            // try {
-            //     new Promise((resolve, reject) => {
-            //         ARQService.subscribe(this.ruleForm.email)
-            //             .then(response => {
-            //                 console.log(response);
-            //                 this.visible = true
-            //                 resolve(response)
-            //             })
-            //             .catch(reject)
-            //     })
-            // } catch (error) {
-            //     console.log(error + " | sendMail");
-            // }
+            try {
+                new Promise((resolve, reject) => {
+                    ARQService.subscribe(this.ruleForm.email)
+                        .then(response => {
+                            this.updateModalSubscribe()
+                            resolve(response)
+                        })
+                        .catch(reject)
+                })
+            } catch (error) {
+                console.log(error + " | sendMail");
+            }
         }
     },
 };
@@ -67,17 +69,23 @@ export default {
     align-items: center
 }
 
+
+#subscribe-input {
+  width: 250px; 
+  margin-right: 20px;
+}
+
+
 @import url("../../style/animation.less");
 
 @label-hover: rgba(0, 0, 0, 0.6);
 @label-hover-default: rgba(0, 0, 0, 1);
 
-
 .el-form {
-    width: 100%;
+  width: 100%;
 }
 .el-select {
-    width: 100%;
+  width: 100%;
 }
 .el-select-dropdown__item {
     display: flex;
@@ -110,7 +118,7 @@ export default {
 }
 .el-input {
   input {
-    width: 230px;
+    // width: 230px;
     margin: 0;
     border: 0;
     padding-left: 10px;
@@ -218,7 +226,7 @@ export default {
 }
 .disabled-btn {
   user-select: none;
-//   pointer-events: none;
+  pointer-events: none;
   opacity: 0.7;
 }
 

@@ -1,6 +1,7 @@
 export default {
-  modalStatus: false,
+  modalSubscribe: false,
   slideIndex: 0,
   swiper: null,
-  regin: false
+  regin: false,
+  modalSignup: false
 }

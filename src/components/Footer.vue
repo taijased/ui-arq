@@ -1,8 +1,16 @@
 <template lang="pug">
     footer
-        .footer-item
-            img(v-if="getSlideIndex !== 4", @click="nextSlide" src="../assets/scroll.svg")
-            img(v-else, @click="topSlide", src="../assets/scrollTop.svg")
+        .footer-item(v-if="getSlideIndex !== 4", @click="nextSlide")
+            .footer-item__hover
+                <svg   width="28" height="44" viewBox="0 0 28 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="1" y="1" width="26" height="42" rx="13" stroke="black" stroke-width="2"/>
+                    <rect class='shake-vertical' x="12.6" y="8.79999" width="2.8" height="7.33333" rx="1.4" fill="black"/>
+                </svg>
+                span Скрольте вниз
+        .footer-item(v-else, @click="topSlide")
+            .footer-item__hover
+                img( src="../assets/arrow-left.svg", class='shake-vertical')
+                span Вернуться наверх
         .footer-item(v-if="getSlideIndex === 4")
             .copyright © Copyright 2019 ARQ, LLC
         .footer-item(v-if="getSlideIndex === 4")
@@ -56,16 +64,31 @@ footer
     height 5vw
     padding 0 5vw
     .footer-item
-        img 
-            margin-top -7px
-            width 180px
-            height 35px
+        display flex
+        flex-direction row
+        align-items center
+        justify-content flex-end
+        &__hover
             opacity 1
             transition opacity .3s
             &:hover
                 opacity .7
                 transition opacity .3s
                 cursor pointer
+            span 
+                font-family: 'TT Norms Medium';               
+                font-style: normal;
+                font-weight: 500;
+                font-size: $h3;
+                line-height: 26px;
+                letter-spacing: -0.6875px;
+                color: #000000;
+                margin-left 10px
+            img 
+                margin-top -20px
+                width 28px
+                height 44px
+                
         .copyright
             font-family: 'TT Norms Medium';               
             font-style: normal;

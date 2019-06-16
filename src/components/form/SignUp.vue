@@ -12,7 +12,7 @@
             el-form-item(prop="password", :class="{'not-empty': ruleForm.password !== ''}")
                 el-input(v-model='ruleForm.password', autocomplete="off", show-password)
                 .label Пароль
-        .primary-btn(@click="submitForm()", :class="{'disabled-btn': !disabledBtn}", style="width: 250px;") Зарегестрироваться
+        .primary-btn(@click="submitForm()", :class="{'disabled-btn': !disabledBtn}", style="width: 250px; margin: 0 30px;") Зарегестрироваться
 </template>
 <script>
 import ARQService from '../../api/ARQService';
@@ -71,19 +71,24 @@ export default {
         };
     },
     methods: {
+        ...mapActions({
+            updateModalSignUp: "main/updateModalSignUp",
+        }),
         submitForm() {
-            try {
-                new Promise((resolve, reject) => {
-                    ARQService.registration(this.ruleForm)
-                        .then(response => {
-                            console.log(response);
-                            resolve(response)
-                        })
-                        .catch(reject)
-                })
-            } catch (error) {
-                console.log(error + " | registrationError");
-            }
+            this.updateModalSignUp()
+            // try {
+            //     new Promise((resolve, reject) => {
+            //         ARQService.registration(this.ruleForm)
+            //             .then(response => {
+            //                 console.log(response);
+            //                 this.updateModalSignUp()
+            //                 resolve(response)
+            //             })
+            //             .catch(reject)
+            //     })
+            // } catch (error) {
+            //     console.log(error + " | registrationError");
+            // }
         }
     },
 };
@@ -105,9 +110,6 @@ export default {
 @label-hover-default: rgba(0, 0, 0, 1);
 
 
-.el-form-item__content {
-    margin-bottom: 10px !important;
-}
 .el-form {
     width: 100%;
 }
@@ -145,7 +147,7 @@ export default {
 }
 .el-input {
   input {
-    width: 350px;
+    // width: 350px;
     margin: 0;
     border: 0;
     padding-left: 10px;
@@ -252,7 +254,7 @@ export default {
 }
 .disabled-btn {
   user-select: none;
-//   pointer-events: none;
+  pointer-events: none;
   opacity: 0.7;
 }
 

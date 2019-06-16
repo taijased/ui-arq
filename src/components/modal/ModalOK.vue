@@ -1,8 +1,9 @@
 <template lang="pug">
-    el-dialog(:visible.sync="visible", :show-close="false", width="30%")
+    el-dialog(:visible.sync='visible', width='30%', top="30vh")
         .modalok
             .modalok__title Спасибо, что вы с нами!
-            .primary-btn OK
+            .primary-btn(@click="updateModalSubscribe") OK
+
 </template>
 
 <script>
@@ -12,43 +13,42 @@ import { mapGetters, mapActions} from 'vuex';
 export default {
     computed: {
         ...mapGetters({
-           getModalStatus: "modal/getModalStatus",
+           getModalSubscribe: "main/getModalSubscribe",
         }),
         visible: {
             get() {
-                return this.getModalStatus
+                return this.getModalSubscribe
             },
             set() {
-                this.updateModalStatus()
+                this.updateModalSubscribe()
             }
         }
     },
     methods: {
         ...mapActions({
-            updateModalStatus: "modal/updateModalStatus",
+            updateModalSubscribe: "main/updateModalSubscribe",
         }),
     }
 }
 </script>
 
 <style lang="stylus">
-.el-dialog__header
-    display none !important
-.el-dialog__body
-    padding 0 !important
+
+
 .modalok
     width 100%
     height 100%
     display flex
     flex-direction column
-    align-items flex-start
+    align-items center
+    align-items center
     &__title 
-        margin-left 40px
-        margin-top 30px
         font-style: normal;
         font-weight: 500;
-        font-size: 38px;
+        font-size: $h1;
         line-height: 57px;
         letter-spacing: -0.988236px;
         color: #000000;
+        white-space nowrap
+        margin-bottom 20px
 </style>
