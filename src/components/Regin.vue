@@ -7,6 +7,8 @@
             .content__name Регистрация 
               a.enter(href="https://google.com") Войти
           SignUp
+      img.image-block(src="../assets/screen2.png")  
+      
 </template>
 
 <script>
@@ -27,4 +29,11 @@ export default {
   text-decoration: inherit;
   margin-left 20px
   opacity 0.3
+.image-block
+  position absolute
+  bottom 0
+  right 0
+  z-index 2
+  width 70vw
+
 </style>

@@ -18,7 +18,7 @@
                 img(src="../../assets/web.svg")
                 span WebAR Скоро
 
-    //- img.image-block(src="../../assets/screen3.svg")  
+      img.image-block(src="../../assets/screen3.png")  
 </template>
 
 <script>
@@ -30,10 +30,10 @@
 
 .image-block
   position absolute
-  bottom 40px
-  right 286px
+  bottom 5vw
+  right 20vw
   z-index 2
-  height 75vh
+  width 30vw
 .controls
   width $info-block-w - 40px
   display flex

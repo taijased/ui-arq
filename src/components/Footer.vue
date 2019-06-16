@@ -60,7 +60,6 @@ footer
     z-index 10
     row-center()
     justify-content space-between
-    background: #FFFFFF;
     height 5vw
     padding 0 5vw
     .footer-item
@@ -68,6 +67,7 @@ footer
         flex-direction row
         align-items center
         justify-content flex-end
+        font-family: 'TT Norms Medium';               
         &__hover
             opacity 1
             transition opacity .3s
@@ -76,7 +76,6 @@ footer
                 transition opacity .3s
                 cursor pointer
             span 
-                font-family: 'TT Norms Medium';               
                 font-style: normal;
                 font-weight: 500;
                 font-size: $h3;
@@ -90,7 +89,6 @@ footer
                 height 44px
                 
         .copyright
-            font-family: 'TT Norms Medium';               
             font-style: normal;
             font-weight: 500;
             font-size: $h3;
@@ -98,7 +96,6 @@ footer
             letter-spacing: -0.452942px;
             color: #000000;
         .email
-            font-family: 'TT Norms Medium';               
             font-style: normal;
             font-weight: 500;
             font-size: $h3;
