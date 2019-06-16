@@ -4,7 +4,8 @@
       .temp
         .info-block
           .content
-            .content__name Регистрация
+            .content__name Регистрация 
+              a.enter(href="https://google.com") Войти
           SignUp
 </template>
 
@@ -21,4 +22,9 @@ export default {
 <style scoped lang="stylus">
 .temp
   height 330px
+.enter
+  color: inherit;
+  text-decoration: inherit;
+  margin-left 20px
+  opacity 0.3
 </style>
