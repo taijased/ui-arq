@@ -85,5 +85,7 @@ header
                     color: #000000;
                     opacity: 1
                     box-shadow: 0 6px 0 -2px $purple;
+                &:hover
+                    cursor pointer
 
 </style>    

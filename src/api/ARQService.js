@@ -1,11 +1,14 @@
 
-import Api from './Api.js'
-
+import SubscribeAPI from './SubscribeAPI.js'
+import API from './API';
 
 
 const ARQService = {
   subscribe (email) {
-    return Api.post('subnews/ARQLLC/' + email)
+    return SubscribeAPI.post('subnews/ARQLLC/' + email)
+  },
+  registration (data) {
+    return API.post('signup', data)
   }
 }
 

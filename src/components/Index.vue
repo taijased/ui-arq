@@ -1,16 +1,31 @@
 <template lang="pug">
   .index
     Header
-    CustomSwiper
+    Regin(v-if="getRegin")
+    CustomSwiper(v-if="!getRegin")
+    Footer(v-if="!getRegin")
 </template>
 
 <script>
+import { mapGetters} from 'vuex';
+
 import CustomSwiper from './CustomSwiper';
 import Header from './Header';
+import Footer from './Footer';
+import Regin from './Regin';
+
+
 export default {
+  computed: {
+    ...mapGetters({
+      getRegin: "main/getRegin"
+    }),
+  },
   components: {
     CustomSwiper,
-    Header
+    Header,
+    Footer,
+    Regin
   }
 }
 </script>

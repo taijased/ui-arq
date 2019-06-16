@@ -1,8 +1,8 @@
 import axios from 'axios'
 
 
-let API = axios.create({
-  baseURL: process.env.VUE_APP_API_SIGNIN,
+let SubscribeAPI = axios.create({
+  baseURL: process.env.VUE_APP_API_URL,
   headers: {
     'Accept': 'application/json; charset=utf-8',
     'Accept-Language': 'ru-RU,ru;q=0.5',
@@ -10,4 +10,4 @@ let API = axios.create({
   }
 })
 
-export default API
+export default SubscribeAPI

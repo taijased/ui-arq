@@ -1,10 +1,19 @@
 <template lang="pug">
-    .primary-btn Попробовать бесплатно
+    .primary-btn(@click="updateRegin") Попробовать бесплатно
 </template>
 
 <script>
-export default {
+import { mapActions} from 'vuex';
 
+export default {
+  methods: {
+    ...mapActions({
+      updateRegin: "main/updateRegin",
+    }),
+    tryFree() {
+      console.log("free");
+    }
+  }
 }
 </script>
 
@@ -27,6 +36,7 @@ export default {
   flex-direction: row
   justify-content: center
   align-items: center
+  user-select none
   &:hover
     cursor pointer
     opacity 0.7
