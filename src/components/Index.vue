@@ -4,14 +4,12 @@
     CustomSwiper
     Footer
     ModalOK
-    ModalSignUp
 </template>
 
 
 <script>
 import { mapGetters} from 'vuex';
 import ModalOK from './modal/ModalOK';
-import ModalSignUp from './modal/ModalSignUp';
 import CustomSwiper from './CustomSwiper';
 import Header from './Header';
 import Footer from './Footer';
@@ -26,8 +24,7 @@ export default {
     CustomSwiper,
     Header,
     Footer,
-    ModalOK,
-    ModalSignUp
+    ModalOK
   }
 }
 </script>
