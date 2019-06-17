@@ -1,5 +1,5 @@
 <template lang="pug">
-    a(href="https://google.com")
+    a(href="https://platform.arq.su/")
       .primary-btn Попробовать бесплатно
 </template>
 
