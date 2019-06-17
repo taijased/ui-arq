@@ -12,6 +12,7 @@
 </template>
 
 <script>
+
 import { mapGetters, mapActions} from 'vuex';
 import FreeBtn from './FreeBtn';
 

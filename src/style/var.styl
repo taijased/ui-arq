@@ -13,7 +13,7 @@ $h2 = 22px
 $h1 = 28px
 
 
-
+$time-description = .25s
 
 
 // colors
@@ -82,3 +82,220 @@ $hover-time = .3s
   flex-direction: row
   justify-content: flex-start
   align-items: center
+
+
+
+// form
+$error-color =  #9a0f20
+$label-hover = rgba(0, 0, 0, 0.6);
+$label-hover-default = rgba(0, 0, 0, 1);
+
+
+
+
+h1() {
+    font-family 'TT Norms Bold'
+    font-style: normal;
+    font-weight: bold;
+    font-size: 32px;
+    letter-spacing: -0.82353px;
+    color: #000000;
+}
+
+h2() {
+    font-family 'TT Norms Medium'
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    letter-spacing: -0.658824px;
+    color: #000000;
+}
+
+h3() {
+    font-family 'TT Norms Medium'
+    font-style: normal;
+    font-weight: 500;
+    font-size: 19px;
+    letter-spacing: -0.452942px;
+    color: #000000;
+}
+h4() {
+    font-family 'TT Norms Regular'
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    letter-spacing: -0.452942px;
+    color: #000000;
+}
+
+h5() {
+    font-family 'TT Norms Medium'
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    letter-spacing: -0.370589px;
+    color: #000000;
+}
+h6() {
+    font-family 'TT Norms Medium'
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: -0.288236px;
+    color: #000000;
+}
+
+
+
+.primary-btn
+    h3()
+    white-space: nowrap;
+    background: $purple;
+    border-radius: 6px;
+    padding 10px 25px
+    display flex
+    flex-direction: row
+    justify-content: center
+    align-items: center
+    user-select none
+    color white
+    // opacity 1
+    transition: opacity .3s
+    &:hover
+        cursor pointer
+        opacity 0.7
+        transition: opacity .3s
+    img 
+        width 18px
+        height 18px
+        margin-right 8px
+
+
+
+
+
+
+// reset 
+
+
+
+// tabs
+.el-tabs__active-bar
+    display none
+.el-tabs__item.is-active {
+    color: #000 !important;
+}
+.el-tabs__item {
+    h2()
+    color: rgba(0,0,0,0.3) !important;
+}
+.el-tabs__nav-wrap::after {
+    background: white !important
+}
+
+
+
+
+
+
+
+
+// form
+
+
+.el-form 
+    width: 100%;
+    margin-right 20px
+
+.el-select 
+    width: 100%;
+
+.el-select-dropdown__item 
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    h4()
+
+.el-select-dropdown__item.selected 
+    color: rgba(61, 69, 238, 1);
+.el-select-dropdown 
+    border: none;
+
+.el-popper .popper__arrow, .el-popper .popper__arrow::after 
+    display: none !important;
+
+
+.el-select .el-input.is-focus .el-input__inner 
+    border-color: $label-hover-default;
+    &:focus
+        border-color: $label-hover-default;
+
+.el-input 
+    input 
+        width 230px
+        margin: 0;
+        border: 0;
+        white-space: normal;
+        background: none;
+        h3()
+        color: $label-hover-default;
+        border-bottom: 1px solid $label-hover;
+        transition: color $time-description, border-bottom $time-description;
+        border-radius: 0px;
+        &:focus,
+        &:hover 
+            outline: 0;
+            border-bottom: 1px solid $label-hover-default;
+    &__suffix 
+        right: 0;
+
+.el-form-item 
+    margin-bottom 40px
+    margin-top 20px
+    &:focus-within,
+    &:hover 
+        .label 
+            h5()
+            top: -5px;
+            left: 0;
+            transition: color $time-description, top $time-description,
+                left $time-description, font-size $time-description;
+            width: 300px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+    .label 
+        h4()
+        font-family 'TT Norms Medium'
+        color: $label-hover;
+        position: absolute;
+        top: 50%;
+        left: 15px;
+        transition: color $time-description, top $time-description,
+        left $time-description, font-size $time-description;
+        z-index: 2;
+        transform: translate(0, -50%);
+    &__error 
+        h6()
+        color: $error-color;
+
+.not-empty 
+    .label 
+        h5()
+        top: -5px;
+        left: 0;
+        transition: color $time-description, top $time-description,
+        left $time-description, font-size $time-description;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+.is-error 
+    .el-input__inner  
+        border-color $error-color !important
+    .el-input__icon 
+        color $error-color !important

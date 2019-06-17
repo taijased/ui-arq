@@ -1,9 +1,8 @@
 <template lang="pug">
   .index
     Header
-    Regin(v-if="getRegin")
-    CustomSwiper(v-if="!getRegin")
-    Footer(v-if="!getRegin")
+    CustomSwiper
+    Footer
     ModalOK
     ModalSignUp
 </template>
@@ -16,8 +15,6 @@ import ModalSignUp from './modal/ModalSignUp';
 import CustomSwiper from './CustomSwiper';
 import Header from './Header';
 import Footer from './Footer';
-import Regin from './Regin';
-
 
 export default {
   computed: {
@@ -29,7 +26,6 @@ export default {
     CustomSwiper,
     Header,
     Footer,
-    Regin,
     ModalOK,
     ModalSignUp
   }

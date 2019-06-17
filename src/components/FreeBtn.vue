@@ -1,5 +1,6 @@
 <template lang="pug">
-    .primary-btn(@click="clickBtn") Попробовать бесплатно
+    a(href="https://google.com")
+      .primary-btn Попробовать бесплатно
 </template>
 
 <script>
@@ -22,6 +23,9 @@ export default {
 
 <style lang="stylus">
 
+a
+  color: inherit;
+  text-decoration: inherit;
 .primary-btn
   white-space: nowrap;
   font-family: 'TT Norms Medium';                
@@ -48,5 +52,6 @@ export default {
     width 18px
     height 18px
     margin-right 8px
+    
 
 </style>
