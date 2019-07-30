@@ -7,7 +7,7 @@
             .content__name ARQ Editor
             .content__description Это простой инструмент для создания собственного приложения AR. Редактор предназначен для обычных пользователей, без знаний программирования. Загрузите свою 3D модель, откройте ARQ Viewer на вашем смартфоне и демонстрируйте ваше творчество в реальном мире.  
           FreeBtn
-      img.image-block(src="../../assets/screen2.png")  
+      img.image-block(src="../../assets/screen2.jpg")  
 </template>
 
 <script>

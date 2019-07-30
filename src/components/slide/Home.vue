@@ -7,7 +7,7 @@
             .content__name Платформа ARQ
             .content__description Создайте свою дополненную реальность с помощью платформы ARQ.
           FreeBtn
-      img.image-block(src="../../assets/screen1.png")  
+      img.image-block(src="../../assets/screen1.jpg")  
 </template>
 
 <script>

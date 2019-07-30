@@ -1,6 +1,6 @@
 
 import SubscribeAPI from './SubscribeAPI.js'
-import API from './API';
+import API from './Api';
 
 
 const ARQService = {
