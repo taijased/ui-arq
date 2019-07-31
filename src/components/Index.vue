@@ -8,18 +8,12 @@
 
 
 <script>
-import { mapGetters} from 'vuex';
 import ModalOK from './modal/ModalOK';
 import CustomSwiper from './CustomSwiper';
 import Header from './Header';
 import Footer from './Footer';
 
 export default {
-  computed: {
-    ...mapGetters({
-      getRegin: "main/getRegin"
-    }),
-  },
   components: {
     CustomSwiper,
     Header,

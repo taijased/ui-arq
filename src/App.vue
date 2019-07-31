@@ -1,17 +1,8 @@
 <template lang="pug">
   #app
-    Index
+    router-view 
 </template>
 
-<script>
-import Index from './components/Index.vue'
-
-export default {
-  components: {
-    Index
-  }
-}
-</script>
 <style lang="stylus">
 #app
   font-family 'Avenir', Helvetica, Arial, sans-serif
@@ -23,6 +14,6 @@ export default {
 body
   margin 0
   padding 0
-  overflow hidden
+
 
 </style>

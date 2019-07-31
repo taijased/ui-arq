@@ -2,13 +2,13 @@
     header
         .navigation
             img.logo(src="../assets/head_logo.svg")
-            nav(v-if="!getRegin")
+            nav
                 .nav-item(@click="clickNavItem(1)", :class="{'active': getSlideIndex === 1}") ARQ Editor
                 .nav-item(@click="clickNavItem(2)", :class="{'active': getSlideIndex === 2}") ARQ Viewer
                 .nav-item(@click="clickNavItem(3)", :class="{'active': getSlideIndex === 3}") Для кого?
                 .nav-item(@click="clickNavItem(4)", :class="{'active': getSlideIndex === 4}") Оставайся на связи
-        FreeBtn(v-if="!getRegin")
-        .primary-btn(v-else, @click="updateRegin") Назад
+        FreeBtn
+        //- .primary-btn(v-else, @click="updateRegin") Назад
 </template>
 
 <script>
@@ -21,7 +21,6 @@ export default {
         ...mapGetters({
             getSlideIndex: "main/getSlideIndex",
             getSwiper: "main/getSwiper",
-            getRegin: "main/getRegin"
         }),
     },
     methods: {
