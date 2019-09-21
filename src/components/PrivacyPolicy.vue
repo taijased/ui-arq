@@ -2,7 +2,12 @@
     .privacy-policy
         HeaderEmpty
         .privacy-title Privacy Policy
-        .content ARQ LLC is committed to keeping our policies as plain and simple as possible. If you still have any questions after reading this, please email us at privacy@arq.su. This Privacy Policy only applies to our website located at www.arq.su (“Site”).
+        .content ARQ LLC is committed to keeping our policies as plain and simple as possible. If you still have any questions after reading this, please email us at privacy@arq.su.
+        .privacy-subtitle We do not collect any personal information from children with our Apps.
+        .content When you download and use our mobile applications, we don’t require you to provide any information and we don’t collect any information about you or your device, except for nonpersonal information about the duration the App is used and how the App is used, such as the screens viewed and actions taken within our mobile applications.
+        .content We do not give out any nonpersonal information to anybody outside our company.
+        .content We comply with the Children’s Online Privacy Protection Act .
+        .content Our website and mobile applications comply with the Children’s Online Privacy Protection Act (“COPPA”). We don’t knowingly collect personal information from children under the age of 13, and if in the event that a user identifies himself or herself as a child under the age of 13 through a support request or through any feedback, we will not collect, store or use, and will delete in a secure manner, any personal information of such user.
         .privacy-subtitle Information We Collect
         .content To us, “personal information” means any information that identifies or is identifiable to a person. Your registration information is personal information and is kept private and confidential. If you invite friends to join the Site, their invitation information is also kept private and confidential.
             | To simplify the registration process, you may choose to link your registration and login using Facebook, Twitter or other social media sites. When you link your account, we will exchange information with the applicable social media site as described to you when you first set up the link. If you no longer wish to link your account, please email us at privacy@arq.su.
