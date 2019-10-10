@@ -1,0 +1,251 @@
+<template lang="pug">
+    .mobile-version
+        .header
+            img(src="../../assets/head_logo.svg", alt="logo")
+            .get-editor-btn Получить доступ
+        .card
+            .card__title Платформа ARQ
+            .card__subtitle Создайте свою дополненную реальность с помощью платформы ARQ.
+            img(src="../../assets/component-2.png", alt="alt")
+        .card
+            .card__title ARQ Editor
+            .card__subtitle Это простой инструмент для создания собственного приложения AR. Редактор предназначен для обычных пользователей, без знаний программирования. Загрузите свою 3D модель, откройте ARQ Viewer на вашем смартфоне и демонстрируйте ваше творчество в реальном мире. 
+            .card__btn Получить доступ
+            img(src="../../assets/component-1.png",style="margin-top: 42px;", alt="alt")
+
+        .card
+            .card__title ARQ Viewer
+            .card__subtitle Для просмотра ваших проектов используйте ARQ Viewer. Простое приложение которое синхронизирует все ваши проекты созданные в ARQ Editor.
+          
+            .card__btn Получить доступ      
+            el-carousel(:interval='3000')
+                el-carousel-item
+                    .slider-card
+                        img(src="../../assets/education.svg", alt="museum")
+                        .slider-card__title Образование
+                        .slider-card__subtitle Сделайте ваши уроки более интерактивными. Демонстрируйте химические опыты, реализуйте физические явления прямо на вашем столе.
+            
+                el-carousel-item
+                    .slider-card
+                        img(src="../../assets/manufactoring.svg", alt="museum")
+                        .slider-card__title Производство
+                        .slider-card__subtitle Визуализируйте рабочий процесс с целью обучения персонала. Демонстрируйте ваши проекты заказчикам.
+            
+                el-carousel-item
+                    .slider-card
+                        img(src="../../assets/museum.svg", alt="museum")
+                        .slider-card__title Музеи и выставки
+                        .slider-card__subtitle Оживляйте экспонаты, создавайте интерактивные выставки. Рассказывайте историю посетителям по новому.
+            
+            
+            .card__btn Получить доступ           
+
+            
+        .card
+            .card__title Дополняйте реальность
+            .card__subtitle Оставайтесь в курсе последних новостей. Только свежайшие новости проекта из первых рук.
+            MobileSubscribe
+        .about-card
+            .about-card__name © Copyright 2019 ARQ, LLC
+            
+            .about-card__email
+                a(href="mailto:hello@arq.su") hello@arq.su
+
+            img(src="../../assets/arrow-top.svg", alt="alt", width="34", height="34", @click="scrollToTop()")
+            .about-card__name(@click="scrollToTop()") Вернуться наверх
+</template>
+<script>
+import MobileSubscribe from '../form/MobileSubscribe';
+
+export default {
+
+    methods: {
+        scrollToTop() {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        },
+    },
+    components: {
+        MobileSubscribe
+    }
+};
+</script>
+
+<style lang="stylus" scoped>
+.subscribe {
+  margin-top: 20px;
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center
+}
+
+.mobile-version
+    width 100%
+    height auto
+    display flex
+    flex-direction column
+    justify-content center
+    align-items center
+    .header
+        width 100%
+        height 60px
+        display flex
+        flex-direction row
+        justify-content space-between
+        align-items center
+        background: #FFFFFF;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.199929);
+        img 
+            margin-left 22px
+            width 111px
+            height 42px
+    .card
+        margin-top 42px
+        width 330px
+        display flex
+        flex-direction column
+        justify-content center
+        align-items center
+        &__title 
+
+            font-family: 'TT Norms Bold';                
+            font-style: normal;
+            font-weight: bold;
+            font-size: 30px;
+            line-height: 35px;
+            text-align: center;
+            letter-spacing: -0.617648px;
+            color: #000000;
+        &__subtitle
+            font-family: 'TT Norms Regular';                
+            font-style: normal;
+            font-weight: normal;
+            font-size: 18px;
+            line-height: 21px;
+            text-align: center;
+            letter-spacing: -0.370589px;
+            color: #000000;
+            margin-top 23px
+            margin-bottom 42px
+
+        &__btn 
+            font-family: 'TT Norms Medium';                
+            font-style: normal;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 17px;
+            /* identical to box height */
+            letter-spacing: -0.288236px;
+            white-space: nowrap;
+            background: $purple;
+            border-radius: 6px;
+            padding 20px 100px
+            display flex
+            flex-direction: row
+            justify-content: center
+            align-items: center
+            user-select none
+            color white
+            // opacity 1
+            transition: opacity .3s
+            &:hover
+                cursor pointer
+                opacity 0.7
+                transition: opacity .3s
+            img 
+                width 18px
+                height 18px
+                margin-right 8px
+        .slider-card
+            display flex
+            flex-direction column
+            align-items center
+            &__title
+                margin-top 22px
+                font-family: 'TT Norms Bold';                
+                font-style: normal;
+                font-weight: bold;
+                font-size: 30px;
+                line-height: 35px;
+                text-align: center;
+                letter-spacing: -0.617648px;
+                color: #000000;
+            &__subtitle 
+                text-align center
+                font-family: 'TT Norms Regular';                
+                font-style: normal;
+                font-weight: normal;
+                font-size: 18px;
+                line-height: 21px;
+                letter-spacing: -0.370589px;
+                color: #000000;
+                margin-top 23px
+                margin-bottom 42px
+
+    .about-card
+        
+        margin 42px 0
+        display flex
+        flex-direction column
+        justify-content center
+        align-items center
+        &__name 
+            margin-top 12px
+            font-family: 'TT Norms Medium';                
+            font-style: normal;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 21px;
+            letter-spacing: -0.370589px;
+            color: #000000;
+        &__email
+            margin-top 22px
+            margin-bottom 31px
+            font-family: 'TT Norms Medium';                         
+            font-family: TT Norms;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 21px;
+            letter-spacing: -0.370589px;
+            color: #3D3BEE;
+            a
+                color: inherit;
+                text-decoration: inherit;
+
+    .get-editor-btn
+        margin-right 22px
+        font-family: 'TT Norms Medium';                
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 17px;
+        /* identical to box height */
+        letter-spacing: -0.288236px;
+        white-space: nowrap;
+        background: $purple;
+        border-radius: 6px;
+        padding 10px 25px
+        display flex
+        flex-direction: row
+        justify-content: center
+        align-items: center
+        user-select none
+        color white
+        // opacity 1
+        transition: opacity .3s
+        &:hover
+            cursor pointer
+            opacity 0.7
+            transition: opacity .3s
+        img 
+            width 18px
+            height 18px
+            margin-right 8px
+
+.el-carousel
+    margin 22px 0
+    width 100%
+
+</style>
