@@ -65,12 +65,14 @@ export default {
 
 .mobile-subscribe
 
-    height 150px
+    height 170px
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center
     &__btn 
+        width 306.64px !important
+        height 57px !important
         font-family: 'TT Norms Medium';                
         font-style: normal;
         font-weight: 500;
@@ -81,7 +83,6 @@ export default {
         white-space: nowrap;
         background: $purple;
         border-radius: 6px;
-        padding 20px 100px
         display flex
         flex-direction: row
         justify-content: center

@@ -2,7 +2,7 @@
     .mobile-version
         .header
             img(src="../../assets/head_logo.svg", alt="logo")
-            .get-editor-btn Получить доступ
+            router-link(to="/privileges").get-editor-btn Получить доступ
         .card
             .card__title Платформа ARQ
             .card__subtitle Создайте свою дополненную реальность с помощью платформы ARQ.
@@ -10,19 +10,13 @@
         .card
             .card__title ARQ Editor
             .card__subtitle Это простой инструмент для создания собственного приложения AR. Редактор предназначен для обычных пользователей, без знаний программирования. Загрузите свою 3D модель, откройте ARQ Viewer на вашем смартфоне и демонстрируйте ваше творчество в реальном мире. 
-            .card__btn Получить доступ
+            router-link(to="/privileges").card__btn Получить доступ
             img(src="../../assets/component-1.png",style="margin-top: 42px;", alt="alt")
 
         .card
             .card__title ARQ Viewer
             .card__subtitle Для просмотра ваших проектов используйте ARQ Viewer. Простое приложение которое синхронизирует все ваши проекты созданные в ARQ Editor.
-          
-            .card__btn Получить доступ      
-
-
-
-
-            
+            router-link(to="/privileges").card__btn Получить доступ      
 
         .slider-card
             img(src="../../assets/education.svg", alt="museum")
@@ -40,9 +34,7 @@
             img(src="../../assets/museum.svg", alt="museum")
             .slider-card__title Музеи и выставки
             .slider-card__subtitle Оживляйте экспонаты, создавайте интерактивные выставки. Рассказывайте историю посетителям по новому.
-            
-            
-            .card__btn Получить доступ           
+            router-link(to="/privileges").card__btn(style="margin-top: 23px;") Получить доступ           
 
             
         .card
@@ -101,6 +93,8 @@ export default {
         align-items center
         background: #FFFFFF;
         box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.199929);
+        text-decoration: none;
+
         img 
             margin-left 22px
             width 111px
@@ -152,6 +146,8 @@ export default {
             align-items: center
             user-select none
             color white
+            text-decoration: none;
+            
             // opacity 1
             transition: opacity .3s
             &:hover
@@ -162,6 +158,10 @@ export default {
                 width 18px
                 height 18px
                 margin-right 8px
+            a
+                color: inherit;
+                text-decoration: none;
+                font-family: 'TT Norms Medium';   
     .slider-card
         margin-top 42px
         width 330px
@@ -217,7 +217,8 @@ export default {
             color: #3D3BEE;
             a
                 color: inherit;
-                text-decoration: inherit;
+                text-decoration: none;
+                font-family: 'TT Norms Medium';                
 
     .get-editor-btn
         margin-right 22px
@@ -240,8 +241,10 @@ export default {
         color white
         // opacity 1
         transition: opacity .3s
+        text-decoration: none;
         &:hover
             cursor pointer
             opacity 0.7
-            transition: opacity .3s
+            transition: opacity .3s            
+
 </style>

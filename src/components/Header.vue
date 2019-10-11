@@ -77,7 +77,7 @@ header
             justify-content space-between
             .nav-item
                 white-space: nowrap;
-                height @height - 1px
+                height @height - 0.8px
                 row-center()
                 font-family: 'TT Norms Medium';                
                 font-style: normal;
