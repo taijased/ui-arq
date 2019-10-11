@@ -1,6 +1,12 @@
 <template lang="pug">
-    a(href="https://platform.arq.su/")
-      .primary-btn Попробовать бесплатно
+    .free-block
+      router-link(to="/privileges")
+        .free-btn Получить доступ
+    //- a(href="https://platform.arq.su/")
+    //-   .primary-btn Попробовать бесплатно
+    
+
+
 </template>
 
 <script>
@@ -22,36 +28,35 @@ export default {
 </script>
 
 <style lang="stylus">
-
-a
-  color: inherit;
-  text-decoration: inherit;
-.primary-btn
-  white-space: nowrap;
-  font-family: 'TT Norms Medium';                
-  font-style: normal;
-  font-weight: 500;
-  font-size: $h3;
-  letter-spacing: -0.452942px;
-  color: #FFFFFF;
-  background: $purple;
-  border-radius: 6px;
-  padding 10px 25px
-  opacity 1
-  transition: opacity .3s
-  display flex
-  flex-direction: row
-  justify-content: center
-  align-items: center
-  user-select none
-  &:hover
-    cursor pointer
-    opacity 0.7
+.free-block
+  a
+    color: inherit;
+    text-decoration: inherit;
+  .free-btn
+    width 171px
+    height 40px
+    white-space: nowrap;
+    font-family: 'TT Norms Medium';                
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+    letter-spacing: -0.288236px;
+    color: #FFFFFF;
+    background: $purple;
+    border-radius: 6px;
+    opacity 1
     transition: opacity .3s
-  img 
-    width 18px
-    height 18px
-    margin-right 8px
-    
+    display flex
+    flex-direction: row
+    justify-content: center
+    align-items: center
+    user-select none
+    &:hover
+      cursor pointer
+      opacity 0.7
+      transition: opacity .3s
+      
 
 </style>

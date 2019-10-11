@@ -1,0 +1,120 @@
+<template lang="pug">
+    .signup
+        el-form(label-position='left', :model='ruleForm', :rules="rules", status-icon, ref="ruleForm", class="creator-form")
+            el-form-item(prop="name", :class="{'not-empty': ruleForm.name !== ''}")
+                el-input(v-model='ruleForm.name', autocomplete="off")
+                .label Ваше имя
+            el-form-item(prop="email", :class="{'not-empty': ruleForm.email !== ''}")
+                el-input(v-model='ruleForm.email', autocomplete="off")
+                .label E-mail
+            el-form-item(prop="phone", :class="{'not-empty': ruleForm.phone !== ''}")
+                el-input(v-model='ruleForm.phone', id="form_phone")
+                .label Телефон
+
+        .primary-btn(@click="submitForm()", style="width: 250px; margin: 0 30px;") Отправить
+        .politic-privacy Нажимая кнопку «Отправить», Вы принимаете<br/>  условия 
+            router-link(to="/privacypolicy") Политики конфиденциальности. 
+            span И соглашаетесь на обработку ваших персональных данных
+</template>
+<script>
+import Inputmask from 'inputmask';
+// import ApiTrello from '../api/ApiTrello.js'
+
+export default {
+    data() {
+        var validateEmail = (rule, value, callback) => {
+            if (value === "") {
+                callback(new Error("Обязательное поле"));
+            } else {
+                let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                const isTrue = re.test(value);
+                if (!isTrue) {                 
+                    callback(new Error("Введите в формате. Пример: name@mail.ru"));
+                } else {                 
+                    callback();
+                }
+            }
+        };
+        var validateName = (rule, value, callback) => {
+            if (value === "") {
+                callback(new Error("Обязательное поле"));
+            } else {
+                if (value !== "" && value.length < 30) {                 
+                    callback();
+                } else {                 
+                    callback(new Error("Ваше имя cлишком длинное"));
+                }
+            }
+        };
+        var validatePhone = (rule, value, callback) => {
+            if (value === '') {
+                callback(new Error('Обязательное поле'));
+            } else {
+                let re = /^(\+7|7|8)?[\s\-]?\(?[489][0-9]{2}\)?[\s\-]?[0-9]{3}[\s\-]?[0-9]{2}[\s\-]?[0-9]{2}$/;
+                const isTrue =  re.test(value);
+                if (!isTrue) {
+                    callback(new Error('Неправильный телефон'));
+                } else {
+                    callback();
+                }
+            }
+        };
+        return {
+            ruleForm: {
+                email: "",
+                name: "",
+                phone: "",
+            },
+            rules: {
+                email: [{ validator: validateEmail, trigger: "blur" }],
+                name: [{ validator: validateName, trigger: "blur" }],
+                phone: [{ validator: validatePhone, trigger: "blur" }],
+            },
+        };
+    },
+    methods: {
+
+        submitForm() {
+            // this.$refs.ruleForm.validate((valid) => {
+            //     if (valid) {
+            //         this.registration(this.ruleForm)
+            //     } else {
+            //         return false;
+            //     }
+            // });
+        }
+    },
+    mounted () {
+        setTimeout(() => {
+            var im = new Inputmask("+7 (999) 999-99-99");
+            im.mask(document.getElementById('form_phone'));
+        }, 2000);
+    }
+};
+</script>
+
+<style lang="stylus">
+
+.signup
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+.politic-privacy
+    margin-top 20px
+    text-align center
+    font-family 'TT Norms Medium'
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 17px;
+    text-align: center;
+    color: #000000;
+    a 
+        // text-decoration inherit
+        color $purple
+        &:hover
+            cursor pointers
+            opacity 0.8
+</style>

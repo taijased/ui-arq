@@ -18,24 +18,28 @@
             .card__subtitle Для просмотра ваших проектов используйте ARQ Viewer. Простое приложение которое синхронизирует все ваши проекты созданные в ARQ Editor.
           
             .card__btn Получить доступ      
-            el-carousel(:interval='3000')
-                el-carousel-item
-                    .slider-card
-                        img(src="../../assets/education.svg", alt="museum")
-                        .slider-card__title Образование
-                        .slider-card__subtitle Сделайте ваши уроки более интерактивными. Демонстрируйте химические опыты, реализуйте физические явления прямо на вашем столе.
+
+
+
+
             
-                el-carousel-item
-                    .slider-card
-                        img(src="../../assets/manufactoring.svg", alt="museum")
-                        .slider-card__title Производство
-                        .slider-card__subtitle Визуализируйте рабочий процесс с целью обучения персонала. Демонстрируйте ваши проекты заказчикам.
-            
-                el-carousel-item
-                    .slider-card
-                        img(src="../../assets/museum.svg", alt="museum")
-                        .slider-card__title Музеи и выставки
-                        .slider-card__subtitle Оживляйте экспонаты, создавайте интерактивные выставки. Рассказывайте историю посетителям по новому.
+
+        .slider-card
+            img(src="../../assets/education.svg", alt="museum")
+            .slider-card__title Образование
+            .slider-card__subtitle Сделайте ваши уроки более интерактивными. Демонстрируйте химические опыты, реализуйте физические явления прямо на вашем столе.
+
+
+        .slider-card
+            img(src="../../assets/manufactoring.svg", alt="museum")
+            .slider-card__title Производство
+            .slider-card__subtitle Визуализируйте рабочий процесс с целью обучения персонала. Демонстрируйте ваши проекты заказчикам.
+
+
+        .slider-card
+            img(src="../../assets/museum.svg", alt="museum")
+            .slider-card__title Музеи и выставки
+            .slider-card__subtitle Оживляйте экспонаты, создавайте интерактивные выставки. Рассказывайте историю посетителям по новому.
             
             
             .card__btn Получить доступ           
@@ -87,6 +91,7 @@ export default {
     flex-direction column
     justify-content center
     align-items center
+    overflow-x hidden
     .header
         width 100%
         height 60px
@@ -157,34 +162,34 @@ export default {
                 width 18px
                 height 18px
                 margin-right 8px
-        .slider-card
-            display flex
-            flex-direction column
-            align-items center
-            &__title
-                margin-top 22px
-                font-family: 'TT Norms Bold';                
-                font-style: normal;
-                font-weight: bold;
-                font-size: 30px;
-                line-height: 35px;
-                text-align: center;
-                letter-spacing: -0.617648px;
-                color: #000000;
-            &__subtitle 
-                text-align center
-                font-family: 'TT Norms Regular';                
-                font-style: normal;
-                font-weight: normal;
-                font-size: 18px;
-                line-height: 21px;
-                letter-spacing: -0.370589px;
-                color: #000000;
-                margin-top 23px
-                margin-bottom 42px
-
+    .slider-card
+        margin-top 42px
+        width 330px
+        display flex
+        flex-direction column
+        justify-content center
+        align-items center
+        &__title
+            margin-top 22px
+            font-family: 'TT Norms Bold';                
+            font-style: normal;
+            font-weight: bold;
+            font-size: 30px;
+            line-height: 35px;
+            text-align: center;
+            letter-spacing: -0.617648px;
+            color: #000000;
+        &__subtitle 
+            text-align center
+            font-family: 'TT Norms Regular';                
+            font-style: normal;
+            font-weight: normal;
+            font-size: 18px;
+            line-height: 21px;
+            letter-spacing: -0.370589px;
+            color: #000000;
+            margin-top 23px
     .about-card
-        
         margin 42px 0
         display flex
         flex-direction column
@@ -239,13 +244,4 @@ export default {
             cursor pointer
             opacity 0.7
             transition: opacity .3s
-        img 
-            width 18px
-            height 18px
-            margin-right 8px
-
-.el-carousel
-    margin 22px 0
-    width 100%
-
 </style>

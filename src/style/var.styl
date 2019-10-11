@@ -149,7 +149,14 @@ h6() {
 
 
 .primary-btn
-    h3()
+    font-family: TT Norms;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+    letter-spacing: -0.288236px;
+
     white-space: nowrap;
     background: $purple;
     border-radius: 6px;
@@ -200,15 +207,58 @@ h6() {
 
 
 
+/-----------------FORM-----------------------
 
-// form
+
+
+
+
+default-title-one() {
+    font-family 'TT Norms Medium'
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: -0.247059px;
+    color: #000000;
+}
+
+default-title-second() {
+
+    font-family: 'TT Norms Regular';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 12px;
+    letter-spacing: -0.205883px;
+    color: #000000;
+}
+
+
+
+.el-select .el-input .el-select__caret
+    color: black
+
+
+$done-color = #7EC050
+$error-color =  #9a0f20
+$label-hover = rgba(0, 0, 0, 0.6);
+$label-hover-default = rgba(0, 0, 0, 1);
+
+.el-select .el-input__inner:focus {
+    border-color: $done-color;
+}
+.el-select .el-input__inner:active {
+    border-color: $done-color;
+}
+.el-select .el-input.is-focus .el-input__inner 
+    border-color: $label-hover-default
+    &:focus
+        border-color $label-hover-default
 
 
 .el-form 
     width: 100%;
-    margin-right 20px
-    margin-bottom: -20px
-
 .el-select 
     width: 100%;
 
@@ -228,19 +278,20 @@ h6() {
     display: none !important;
 
 
-.el-select .el-input.is-focus .el-input__inner 
-    border-color: $label-hover-default;
-    &:focus
-        border-color: $label-hover-default;
+
 
 .el-input 
     input 
-        width 230px
         margin: 0;
         border: 0;
         white-space: normal;
         background: none;
-        h3()
+        font-family 'TT Norms Medium'
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 14px;
+        letter-spacing: -0.247059px;
         color: $label-hover-default;
         border-bottom: 1px solid $label-hover;
         transition: color $time-description, border-bottom $time-description;
@@ -258,7 +309,13 @@ h6() {
     &:focus-within,
     &:hover 
         .label 
-            h5()
+            font-family 'TT Norms Regular'
+            font-style: normal;
+            font-weight: normal;
+            font-size: 10px;
+            line-height: 12px;
+            /* identical to box height */
+            letter-spacing: -0.205883px;
             top: -5px;
             left: 0;
             transition: color $time-description, top $time-description,
@@ -269,8 +326,12 @@ h6() {
             justify-content: space-between;
             align-items: center;
     .label 
-        h4()
         font-family 'TT Norms Medium'
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 14px;
+        letter-spacing: -0.247059px;
         color: $label-hover;
         position: absolute;
         top: 50%;
@@ -280,12 +341,22 @@ h6() {
         z-index: 2;
         transform: translate(0, -50%);
     &__error 
-        h6()
+        font-family 'TT Norms Regular'
+        font-style: normal;
+        font-weight: normal;
+        font-size: 10px;
+        line-height: 12px;
+        letter-spacing: -0.205883px;
         color: $error-color;
 
 .not-empty 
     .label 
-        h5()
+        font-family 'TT Norms Regular'
+        font-style: normal;
+        font-weight: normal;
+        font-size: 10px;
+        line-height: 12px;
+        letter-spacing: -0.205883px;
         top: -5px;
         left: 0;
         transition: color $time-description, top $time-description,
@@ -302,5 +373,16 @@ h6() {
         color $error-color !important
 
 
-.el-carousel__button
-    background $purple !important
+.is-hover
+    opacity 1
+    transition: opacity $time-description
+    &:hover
+        cursor pointer
+        opacity 0.7
+        transition: opacity $time-description
+
+
+
+
+.reset-input-controls
+    border none !important

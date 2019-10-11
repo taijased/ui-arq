@@ -32,10 +32,13 @@ export default {
 <style scoped lang="stylus">
 
 
-.index
-  display block
-  background rgba(61, 69, 238, 1);
-  overflow hidden
+
+@media screen and (min-width: 1000px) 
+  .index
+    background rgba(61, 69, 238, 1);
+    overflow hidden
+  .mobile-index
+    display none
 @media screen and (max-width: 1000px) 
   .index
     display none
