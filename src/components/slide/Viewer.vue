@@ -14,7 +14,7 @@
               .primary-btn 
                 img(src="../../assets/play-market-logo.svg")
                 span Скачать
-            .primary-btn(style="width: 250px;margin-top: 5px;")
+            .primary-btn(style="width: 210px;margin-top: 5px;")
                 img(src="../../assets/web.svg")
                 span WebAR Скоро
 
@@ -35,7 +35,7 @@
   z-index 2
   width 30vw
 .controls
-  width $info-block-w - 40px
+  width 260px
   display flex
   flex-direction column
   justify-content center
@@ -46,8 +46,4 @@
     flex-direction row
     justify-content space-between
     align-items center
-  .web-btn
-    margin-top 5px
-    width 100%
-
 </style>

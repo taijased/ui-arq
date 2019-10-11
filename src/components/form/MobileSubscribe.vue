@@ -64,15 +64,13 @@ export default {
 
 
 .mobile-subscribe
-    margin-right -55px
+
     height 150px
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center
     &__btn 
-        margin-top 22px
-        margin-left -27.5px 
         font-family: 'TT Norms Medium';                
         font-style: normal;
         font-weight: 500;

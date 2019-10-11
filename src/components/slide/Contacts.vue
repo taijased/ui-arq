@@ -2,7 +2,7 @@
   .wrapper
     .wrapper__container
       .temp
-        .info-block
+        .info-block(style="width: 400px")
           .content
             .content__name Дополняйте реальность
             .content__description Оставайтесь в курсе последних новостей, никакого спама! Только свежайшие новости проекта из первых рук.

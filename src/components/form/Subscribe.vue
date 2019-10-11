@@ -4,7 +4,7 @@
             el-form-item(prop="email", :class="{'not-empty': ruleForm.email !== ''}")
                 el-input#subscribe-input(v-model='ruleForm.email', autocomplete="off", maxlength="30")
                 .label Email
-        .primary-btn(@click="submitForm()") Оставить почту
+        .primary-btn.sub-btn(@click="submitForm()") Оставить почту
 </template>
 <script>
 import ARQService from '../../api/ARQService';
@@ -64,13 +64,14 @@ export default {
 
 
 .subscribe {
-  margin-top: 20px;
   display: flex;
   width: 100%;
   flex-direction: row;
   justify-content: space-between;
   align-items: center
 }
-
+.sub-btn
+    margin-top -17px
+    margin-left 22px
 
 </style>
