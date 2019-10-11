@@ -1,6 +1,9 @@
 <template lang="pug">
-    .signup
+    .signup(v-loading="loading")
         el-form(label-position='left', :model='ruleForm', :rules="rules", status-icon, ref="ruleForm", class="creator-form")
+            el-form-item(prop="companyName", :class="{'not-empty': ruleForm.companyName !== ''}")
+                el-input(v-model='ruleForm.companyName', autocomplete="off")
+                .label Название Компании
             el-form-item(prop="name", :class="{'not-empty': ruleForm.name !== ''}")
                 el-input(v-model='ruleForm.name', autocomplete="off")
                 .label Ваше имя
@@ -18,7 +21,7 @@
 </template>
 <script>
 import Inputmask from 'inputmask';
-// import ApiTrello from '../api/ApiTrello.js'
+import ApiTrello from '../../api/ApiTrello.js'
 
 export default {
     data() {
@@ -60,28 +63,54 @@ export default {
             }
         };
         return {
+            loading: false,
             ruleForm: {
+                companyName: "",
                 email: "",
                 name: "",
                 phone: "",
             },
             rules: {
                 email: [{ validator: validateEmail, trigger: "blur" }],
+                companyName: [{ validator: validateName, trigger: "blur" }],
                 name: [{ validator: validateName, trigger: "blur" }],
                 phone: [{ validator: validatePhone, trigger: "blur" }],
             },
         };
     },
     methods: {
-
         submitForm() {
-            // this.$refs.ruleForm.validate((valid) => {
-            //     if (valid) {
-            //         this.registration(this.ruleForm)
-            //     } else {
-            //         return false;
-            //     }
-            // });
+            this.$refs.ruleForm.validate((valid) => {
+                if (valid) {
+                    this.loading = true
+                    const idBoard = "5da06c29c9fb3747328efc66"
+                    const idList = "5da06c347ffb4d2ed8ffad98"
+                    let description = `Имя: ${this.ruleForm.name}\n Телефон: ${this.ruleForm.phone}\n E-mail: ${this.ruleForm.email}`;
+                    
+                    let data = {
+                        "name":`${this.ruleForm.companyName}`,
+                        "desc": description,
+                        "idBoard": idBoard,
+                        "idList": idList,
+                    }
+                    new Promise((resolve, reject) => {
+                        ApiTrello.post('', data)
+                            .then(response => {
+                                this.loading = false
+                                this.$router.push('/')
+                                resolve(response)
+                            })
+                            .catch(error => {
+                                this.loading = false
+                                this.$router.push('/')
+                                reject(error)
+                            })
+                    })
+                } else {
+                    return false;
+                }
+            });
+
         }
     },
     mounted () {
