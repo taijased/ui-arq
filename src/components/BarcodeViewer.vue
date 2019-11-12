@@ -1,18 +1,30 @@
-<template lang="pug">
-    .viewer
-        a-scene(v-if='visible', embedded='', vr-mode-ui='enabled: false', arjs='sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;')
-            a-assets
-                a-asset-item#animated-asset(src='https://raw.githubusercontent.com/nicolocarpignoli/nicolocarpignoli.github.io/master/ar-playground/models/CesiumMan.gltf')
-            a-marker(type='pattern', url='pattern-mark.patt')
-                a-entity(animation-mixer='', gltf-model='#animated-asset', scale='2 2 2')
-            a-entity(camera='')
-        .au-media(v-else)
-            img(src="../assets/viewer/aumedia.svg")
-            img(src="../assets/viewer/close.svg")
-            img(src="../assets/viewer/arq-family.svg")
-            .custom-progress
-                span
-            span Подождите, загружаем
+<template>
+
+    <div class="viewer">
+        <a-scene v-if='visible' embedded vr-mode-ui="enabled: false" arjs="sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;">
+            <a-assets>
+                <a-asset-item id="animated-asset" src="https://raw.githubusercontent.com/nicolocarpignoli/nicolocarpignoli.github.io/master/ar-playground/models/CesiumMan.gltf"></a-asset-item>
+            </a-assets>
+            <a-marker type='pattern' url='pattern-mark.patt'>
+                <a-entity
+                    animation-mixer
+                    gltf-model="#animated-asset"
+                    scale="2 2 2">
+                </a-entity>
+            </a-marker>
+            <a-entity camera></a-entity>
+        </a-scene>
+
+        <div v-else class="au-media">
+            <img src="../assets/viewer/aumedia.svg" alt="">
+            <img src="../assets/viewer/close.svg" alt="">
+            <img src="../assets/viewer/arq-family.svg" alt="">
+            <div class="custom-progress">
+                <span></span>
+            </div>
+            <span>Подождите, загружаем</span>
+        </div>
+    </div>
 
 
 
