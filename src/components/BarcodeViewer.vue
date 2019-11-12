@@ -4,7 +4,7 @@
         <a-assets>
             <a-asset-item id="animated-asset" src="https://raw.githubusercontent.com/nicolocarpignoli/nicolocarpignoli.github.io/master/ar-playground/models/CesiumMan.gltf"></a-asset-item>
         </a-assets>
-        <a-marker-camera type='pattern' url='pattern-mark.patt'>
+        <a-marker-camera type='pattern' url='https://arq.su/pattern-mark.patt'>
             <a-entity
                 animation-mixer
                 gltf-model="#animated-asset"
