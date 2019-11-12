@@ -3,7 +3,7 @@
         a-scene(v-if='visible', embedded='', vr-mode-ui='enabled: false', arjs='sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;')
             a-assets
                 a-asset-item#animated-asset(src='https://raw.githubusercontent.com/nicolocarpignoli/nicolocarpignoli.github.io/master/ar-playground/models/CesiumMan.gltf')
-                a-marker-camera(type='pattern', url='https://arq.su/pattern-mark.patt')
+                a-marker(type='pattern', url='https://arq.su/pattern-mark.patt')
                     a-entity(animation-mixer='', gltf-model='#animated-asset', scale='2 2 2')
                 a-entity(camera='')
         .au-media(v-else)
