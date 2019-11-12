@@ -13,6 +13,7 @@ const Error404 = () => import('./components/Error404.vue')
 const PrivacyPolicy = () => import('./components/PrivacyPolicy.vue')
 const PrivacyPolicyChildren = () => import('./components/PrivacyPolicyChildren.vue')
 const Privileges = () => import('./components/form/Privileges.vue')
+const BarcodeViewer = () => import('./components/BarcodeViewer.vue')
 
 
 
@@ -37,6 +38,10 @@ export default new Router({
     {
       path: '/bc',
       component: PrivacyPolicyChildren
+    },
+    {
+      path: '/barcodeviewer',
+      component: BarcodeViewer
     },
     { 
       path: "*", 
