@@ -1,4 +1,4 @@
-<template>
+<template lang="pug">
 
     <div class="viewer">
         <a-scene v-if='visible' embedded vr-mode-ui="enabled: false" arjs="sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;">
@@ -6,11 +6,9 @@
                 <a-asset-item id="animated-asset" src="https://raw.githubusercontent.com/nicolocarpignoli/nicolocarpignoli.github.io/master/ar-playground/models/CesiumMan.gltf"></a-asset-item>
             </a-assets>
             <a-marker type='pattern' url='pattern-mark.patt'>
-                <a-entity
-                    animation-mixer
-                    gltf-model="#animated-asset"
-                    scale="2 2 2">
-                </a-entity>
+                <a-box position='0 0.5 0' color='black'></a-box>
+                //- <a-entity animation-mixer='' gltf-model="#animated-asset" scale="2 2 2">
+                //- </a-entity>
             </a-marker>
             <a-entity camera></a-entity>
         </a-scene>
@@ -26,7 +24,21 @@
         </div>
     </div>
 
-
+    //- .viewer
+    //-     .au-media(v-if='!visible')
+    //-         img(src='../assets/viewer/aumedia.svg', alt='')
+    //-         img(src='../assets/viewer/close.svg', alt='')
+    //-         img(src='../assets/viewer/arq-family.svg', alt='')
+    //-         .custom-progress
+    //-             span
+    //-         span Подождите, загружаем
+    //-     a-scene(v-else embedded='', debug='', vr-mode-ui='enabled: false', arjs='sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;')
+    //-         a-assets
+    //-             a-asset-item#animated-asset(src='https://raw.githubusercontent.com/nicolocarpignoli/nicolocarpignoli.github.io/master/ar-playground/models/CesiumMan.gltf')
+    //-         a-marker(type='pattern', url='pattern-mark.patt')
+    //-             a-entity#anim-entity(gltf-model='#animated-asset', scale='2 2 2', animation-mixer='')
+    //-         a-entity(camera='')
+   
 
 </template>
 
@@ -34,18 +46,41 @@
 export default {
     data() {
         return {
+            gltf: "#animated-asset",
             visible: false
         }
     },
+    mounted() {
+
+
+        // let arFrame = document.createElement('script')
+        // arFrame.setAttribute('src', 'https://aframe.io/releases/0.9.2/aframe.min.js')
+        // document.head.appendChild(arFrame)
+
+
+        // let ar_Frame = document.createElement('script')
+        // ar_Frame.setAttribute('src', 'https://raw.githack.com/jeromeetienne/AR.js/master/aframe/build/aframe-ar.min.js')
+        // document.head.appendChild(ar_Frame)
+
+
+        // let arFrameEx = document.createElement('script')
+        // arFrameEx.setAttribute('src', 'https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js')
+        // document.head.appendChild(arFrameEx)
+
+    },
     beforeCreate() {
         setTimeout(() => {
-            this.visible = true
+            this.visible = true;
+            console.log(document.getElementById("anim-entity"))
         }, 3000);
+        setTimeout(() => {
+            console.log(document.getElementById("anim-entity"))
+        }, 5000);
     }
 }
 </script>
 
-<style lang="stylus" scoped>
+<style lang="stylus">
 .viewer
     width 100vw
     height 100vh

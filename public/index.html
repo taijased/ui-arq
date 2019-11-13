@@ -20,7 +20,7 @@
     <!-- Scripts for WebAR-->
     <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
     <script src="https://raw.githack.com/jeromeetienne/AR.js/master/aframe/build/aframe-ar.min.js"></script>
-    <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+    <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script> 
 
   </head>
   <body>
@@ -29,6 +29,11 @@
     </noscript>
     <div id="app"></div>
     <!-- built files will be auto injected -->
-
+    <script>
+      document.querySelector('a-entity').components.position.flushToDOM();  // Flush a component.
+      document.querySelector('a-entity').flushToDOM();  // Flush an entity.
+      document.querySelector('a-entity').flushToDOM(true);  // Flush an entity and its children.
+      document.querySelector('a-scene').flushToDOM(true);
+    </script>
   </body>
 </html>
