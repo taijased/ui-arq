@@ -102,18 +102,12 @@
         </div>
         <script type="text/javascript">
 
-
-
-           
-
             var elem = document.getElementById("view-element");
 
             setTimeout(() => {
-
                 var loader = document.getElementById("loader-id");
                 loader.parentNode.removeChild(loader);
 
-                // document.getElementsByClassName("au-media").remove();
                 const name = "<a-scene embedded vr-mode-ui='enabled: false' arjs='sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'><a-assets> <a-asset-item id='animated-asset' src='https://raw.githubusercontent.com/nicolocarpignoli/nicolocarpignoli.github.io/master/ar-playground/models/CesiumMan.gltf'></a-asset-item></a-assets><a-marker type='pattern' url='pattern-mark.patt'><a-entityanimation-mixergltf-model='#animated-asset'scale='2 2 2'></a-entity></a-marker><a-entity camera></a-entity></a-scene>";
                 elem.innerHTML = name;
             }, 3000);
