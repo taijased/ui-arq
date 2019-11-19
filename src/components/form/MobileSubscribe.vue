@@ -4,7 +4,7 @@
             el-form-item(prop="email", :class="{'not-empty': ruleForm.email !== ''}")
                 el-input#subscribe-input(v-model='ruleForm.email', autocomplete="off", maxlength="30")
                 .label Email
-        .mobile-subscribe__btn(@click="submitForm()") Отправить
+        .mobile-subscribe__btn(@click="submitForm()") Send
 </template>
 <script>
 import ARQService from '../../api/ARQService';
@@ -14,12 +14,12 @@ export default {
     data() {
         var validateEmail = (rule, value, callback) => {
             if (value === "") {
-                callback(new Error("Обязательное поле"));
+                callback(new Error("Required field"));
             } else {
                 let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
                 const isTrue = re.test(value);
                 if (!isTrue) {
-                    callback(new Error("Введите в формате. Пример: name@mail.ru"));
+                    callback(new Error("Type in the format. Example: name@mail.ru"));
                 } else {
                     this.disabledBtn = true
                     callback();

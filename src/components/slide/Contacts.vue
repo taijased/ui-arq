@@ -4,8 +4,10 @@
       .temp
         .info-block(style="width: 400px")
           .content
-            .content__name Дополняйте реальность
-            .content__description Оставайтесь в курсе последних новостей, никакого спама! Только свежайшие новости проекта из первых рук.
+            //- .content__name Дополняйте реальность
+            .content__name Make reality augmented
+            //- .content__description Оставайтесь в курсе последних новостей, никакого спама! Только свежайшие новости проекта из первых рук.
+            .content__description Stay up to date with the latest news. Only the latest project updates.
           Subscribe
 </template>
 

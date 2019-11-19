@@ -1,7 +1,7 @@
 <template lang="pug">
     .free-block
       router-link(to="/privileges")
-        .free-btn Получить доступ
+        .free-btn Gain access
     //- a(href="https://platform.arq.su/")
     //-   .primary-btn Попробовать бесплатно
     

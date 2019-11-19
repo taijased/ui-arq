@@ -2,44 +2,54 @@
     .mobile-version
         .header
             img(src="../../assets/head_logo.svg", alt="logo")
-            router-link(to="/privileges").get-editor-btn Получить доступ
+            router-link(to="/privileges").get-editor-btn Gain access
         .card
-            .card__title Платформа ARQ
-            .card__subtitle Создайте свою дополненную реальность с помощью платформы ARQ.
+            //- .card__title Платформа ARQ
+            //- .card__subtitle Создайте свою дополненную реальность с помощью платформы ARQ.
+            .card__title ARQ Platform
+            .card__subtitle Create your AR experience using ARQ Platform
             img(src="../../assets/component-2.png", alt="alt")
         .card
             .card__title ARQ Editor
-            .card__subtitle Это простой инструмент для создания собственного приложения AR. Редактор предназначен для обычных пользователей, без знаний программирования. Загрузите свою 3D модель, откройте ARQ Viewer на вашем смартфоне и демонстрируйте ваше творчество в реальном мире. 
-            router-link(to="/privileges").card__btn Получить доступ
+            //- .card__subtitle Это простой инструмент для создания собственного приложения AR. Редактор предназначен для обычных пользователей, без знаний программирования. Загрузите свою 3D модель, откройте ARQ Viewer на вашем смартфоне и демонстрируйте ваше творчество в реальном мире. 
+            .card__subtitle Editor is a simple tool for creating AR experiences. The editor is intended for ordinary users, without programming knowledge. Upload your 3D model, open the ARQ Viewer on your smartphone and show your creativity in the real world.
             img(src="../../assets/component-1.png",style="margin-top: 42px;", alt="alt")
 
         .card
             .card__title ARQ Viewer
-            .card__subtitle Для просмотра ваших проектов используйте ARQ Viewer. Простое приложение которое синхронизирует все ваши проекты созданные в ARQ Editor.
-            router-link(to="/privileges").card__btn Получить доступ      
+            //- .card__subtitle Для просмотра ваших проектов используйте ARQ Viewer. Простое приложение которое синхронизирует все ваши проекты созданные в ARQ Editor.
+            .card__subtitle Use the ARQ Viewer to view your projects. A simple application that contains all your projects created in the ARQ Editor.
+            router-link(to="/privileges").card__btn Gain access      
 
         .slider-card
             img(src="../../assets/education.svg", alt="museum")
-            .slider-card__title Образование
-            .slider-card__subtitle Сделайте ваши уроки более интерактивными. Демонстрируйте химические опыты, реализуйте физические явления прямо на вашем столе.
-
+            //- .slider-card__title Образование
+            //- .slider-card__subtitle Сделайте ваши уроки более интерактивными. Демонстрируйте химические опыты, реализуйте физические явления прямо на вашем столе.
+            .slider-card__title Education
+            .slider-card__subtitle Make your lessons more interactive. Demonstrate chemical experiments, realize physical phenomena right on your desk
 
         .slider-card
             img(src="../../assets/manufactoring.svg", alt="museum")
-            .slider-card__title Производство
-            .slider-card__subtitle Визуализируйте рабочий процесс с целью обучения персонала. Демонстрируйте ваши проекты заказчикам.
+            .slider-card__title Manufacturing
+            .slider-card__subtitle Visualize the workflow for staff training. Showcase your designs to customers.
+            //- .slider-card__title Производство
+            //- .slider-card__subtitle Визуализируйте рабочий процесс с целью обучения персонала. Демонстрируйте ваши проекты заказчикам.
 
 
         .slider-card
             img(src="../../assets/museum.svg", alt="museum")
-            .slider-card__title Музеи и выставки
-            .slider-card__subtitle Оживляйте экспонаты, создавайте интерактивные выставки. Рассказывайте историю посетителям по новому.
-            router-link(to="/privileges").card__btn(style="margin-top: 23px;") Получить доступ           
+            .slider-card__title Museums and exhibitions
+            .slider-card__subtitle Relive exhibits, create interactive exhibitions. Tell the story to visitors in a new way.
+            //- .slider-card__title Музеи и выставки
+            //- .slider-card__subtitle Оживляйте экспонаты, создавайте интерактивные выставки. Рассказывайте историю посетителям по новому.
+            router-link(to="/privileges").card__btn(style="margin-top: 23px;") Gain access         
 
             
         .card
-            .card__title Дополняйте реальность
-            .card__subtitle Оставайтесь в курсе последних новостей. Только свежайшие новости проекта из первых рук.
+            //- .card__title Дополняйте реальность
+            //- .card__subtitle Оставайтесь в курсе последних новостей. Только свежайшие новости проекта из первых рук.
+            .card__title Make reality augmented
+            .card__subtitle Stay up to date with the latest news. Only the latest project updates.
             MobileSubscribe
         .about-card
             .about-card__name © Copyright 2019 ARQ, LLC
@@ -48,7 +58,8 @@
                 a(href="mailto:hello@arq.su") hello@arq.su
 
             img(src="../../assets/arrow-top.svg", alt="alt", width="34", height="34", @click="scrollToTop()")
-            .about-card__name(@click="scrollToTop()") Вернуться наверх
+            .about-card__name(@click="scrollToTop()") Back to top
+            //- .about-card__name(@click="scrollToTop()") Вернуться наверх
 </template>
 <script>
 import MobileSubscribe from '../form/MobileSubscribe';

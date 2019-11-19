@@ -1,8 +1,11 @@
 <template lang="pug">
     .error
       .error-title 404
-      .error-subtitle Такой страницы не существует
-      .btn-error(@click="$router.go(-1)") Вернуться назад
+      .error-subtitle There is no such page
+      .btn-error(@click="$router.go(-1)") Return back
+    //-   .error-title 404
+    //-   .error-subtitle Такой страницы не существует
+    //-   .btn-error(@click="$router.go(-1)") Вернуться назад
 
 </template>
 

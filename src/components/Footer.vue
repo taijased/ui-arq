@@ -6,11 +6,11 @@
                     <rect x="1" y="1" width="26" height="42" rx="13" stroke="black" stroke-width="2"/>
                     <rect class='shake-vertical' x="12.6" y="8.79999" width="2.8" height="7.33333" rx="1.4" fill="black"/>
                 </svg>
-                span Скрольте вниз
+                span Scroll down
         .footer-item(v-else, @click="topSlide")
             .footer-item__hover
                 img( src="../assets/arrow-left.svg", class='shake-vertical')
-                span Вернуться наверх
+                span Back to top
         .footer-item(v-if="getSlideIndex === 4")
             .copyright © Copyright 2019 ARQ, LLC
         .footer-item(v-if="getSlideIndex === 4")

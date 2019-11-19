@@ -4,8 +4,10 @@
       .temp
         .info-block
           .content
-            .content__name Платформа ARQ
-            .content__description Создайте свою дополненную реальность с помощью платформы ARQ.
+            //- .content__name Платформа ARQ
+            //- .content__description Создайте свою дополненную реальность с помощью платформы ARQ.
+            .content__name ARQ Platform
+            .content__description Create your AR experience using ARQ Platform
           FreeBtn
       img.image-block(src="../../assets/screen1.jpg")  
 </template>

@@ -1,7 +1,8 @@
 <template lang="pug">
     el-dialog(:visible.sync='visible', width='30%', top="30vh")
         .modalok
-            .modalok__title Спасибо, что вы с нами!
+            //- .modalok__title Спасибо, что вы с нами!
+            .modalok__title Thank you for being with us!
             .primary-btn(@click="updateModalSubscribe") OK
 
 </template>

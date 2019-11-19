@@ -5,23 +5,29 @@
         .info-block
           .content
             .content__name ARQ Viewer
-            .content__description Для просмотра ваших проектов используйте ARQ Viewer. Простое приложение которое синхронизирует все ваши проекты созданные в ARQ Editor.
-          .controls
-            .controls__mobile
-              .primary-btn 
-                img(src="../../assets/apple-logo.svg")
-                span Скачать
-              .primary-btn 
-                img(src="../../assets/play-market-logo.svg")
-                span Скачать
-            .primary-btn(style="width: 210px;margin-top: 5px;")
-                img(src="../../assets/web.svg")
-                span WebAR Скоро
+            //- .content__description Для просмотра ваших проектов используйте ARQ Viewer. Простое приложение которое синхронизирует все ваши проекты созданные в ARQ Editor.
+            .content__description Use the ARQ Viewer to view your projects. A simple application that contains all your projects created in the ARQ Editor.
+            //-   .primary-btn 
+            //-     img(src="../../assets/apple-logo.svg")
+            //-     span Скачать
+            //-   .primary-btn 
+            //-     img(src="../../assets/play-market-logo.svg")
+            //-     span Скачать
+            //- .primary-btn(style="width: 210px;margin-top: 5px;")
+            //-     img(src="../../assets/web.svg")
+            //-     span WebAR Скоро
+          FreeBtn
 
       img.image-block(src="../../assets/screen3.png")  
 </template>
 
 <script>
+import FreeBtn from '../FreeBtn';
+export default {
+  components: {
+    FreeBtn
+  }
+}
 
 </script>
 

@@ -5,8 +5,8 @@
             nav
                 .nav-item(@click="clickNavItem(1)", :class="{'active': getSlideIndex === 1}") ARQ Editor
                 .nav-item(@click="clickNavItem(2)", :class="{'active': getSlideIndex === 2}") ARQ Viewer
-                .nav-item(@click="clickNavItem(3)", :class="{'active': getSlideIndex === 3}") Для кого?
-                .nav-item(@click="clickNavItem(4)", :class="{'active': getSlideIndex === 4}") Оставайся на связи
+                .nav-item(@click="clickNavItem(3)", :class="{'active': getSlideIndex === 3}") For whom?
+                .nav-item(@click="clickNavItem(4)", :class="{'active': getSlideIndex === 4}") Stay in touch
         FreeBtn
         //- .primary-btn(v-else, @click="updateRegin") Назад
 </template>
